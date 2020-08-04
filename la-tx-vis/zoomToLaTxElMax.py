@@ -92,6 +92,8 @@ zeta_maxLUT.RescaleTransferFunction(0.0, 5.0)
 # Rescale transfer function
 zeta_maxPWF.RescaleTransferFunction(0.0, 5.0)
 
+zeta_maxLUT.AutomaticRescaleRangeMode = 'Never'
+
 # Properties modified on threshold1Display
 threshold1Display.Opacity = 0.9
 
