@@ -1,9 +1,6 @@
-# Visualize ADCIRC results with a view of the Louisiana-Texas Coast
-The following two scripts are to be used as setup. Which one to choose depends on if your ADCIRC output file that you are loading to ParaView has time series water elevation data or not. NOTE: These two scripts contain one reference to the name of the file you are loading to ParaView. You will need to change this reference to the name of your file before running the script. To make this change, open the script you want to use with a text editor, search for the line that has the comment '# find source', and replace 'fort.63.nc_fort.74.nc.xmf' with the name of your own file. 
-- zoomToLaTxElTime.py - This script zooms to a view of the Texas and Louisiana coasts, and sets color map properties for bathymetry and water elevation. It is assumed that a file with water elevation time series data is being loaded to ParaView (the file can have other kinds of data as well, but water elevation is a minimum requirement for this script).
-- zoomToLaTxElMax.py - This script has the same function as zoomToLaTxElTime, except it assumes that a file with maximum water elevation data is being loaded to ParaView.
+# Visualize ADCIRC results along the Louisiana-Texas Coast
+This directory contains subdirectories for specific locations or areas along the LATX coast. Each subdirectory contains 2 types of scripts:
+- ``zoomTo`` script: this script should always be used before any other script. It zooms to the area of interest and sets color mapping properties for bathymetry/topography and water surface elevation
+- ``labels``, ``time``, ``windVec``: these scripts add more annotations to the area of interest once the zoomTo script has been applied. These scripts can be run in any order, as they are all independent of each other.
 
-The following three scripts assume that either of the two setup scripts has already been run. Otherwise, trying to run them will results in errors. Unlike the setup scripts, these do not need to be modified based on the name of the file you are loading to ParaView.
-- addLocationLabelsLaTx.py - This script adds labels to selected cities and locations along the La-Tx coast. The file can be extended to add more labels if necessary.
-- addTimeAnnotationLaTx.py - This script adds an annotation indicating what the current time in days is based on ADCIRC's timing. It should be used with a file that has time series data. 
-- addWindVectorsLaTx.py - This script adds scaled vectors representing the magnitude and direction of winds. It should be used with a file that contains data from a fort.74 output file.
+More details about these scripts such as which files they are compatible with can be found in the readme files for the subdirectories, as well as in comments at the top of each script. Also, each subdirectory contains a sample image showing the effects of all scripts used together.
