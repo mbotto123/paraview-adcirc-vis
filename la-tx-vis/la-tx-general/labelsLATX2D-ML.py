@@ -1,4 +1,4 @@
-# Script to add location labels, compatbile with zoomToLaTx2D-moreLand script
+# Script to add location labels, compatible with zoomToLATX2D-ML script
 
 #### import the simple module from the paraview
 from paraview.simple import *

@@ -1,4 +1,4 @@
-# Script to add location labels, compatbile with zoomToLaTx2D-lessLand script
+# Script to add location labels, compatible with zoomToLATX2D-LL script
 
 #### import the simple module from the paraview
 from paraview.simple import *
