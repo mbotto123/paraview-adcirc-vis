@@ -1,4 +1,4 @@
-# This script makes a time annotation for a general 2D view of the LA-TX coast
+# This script makes a time annotation for a 3D view that includes areas around Corpus Christi and Port Aransas
 # Time is expressed relative to the starting time of the simulation
 
 # Can handle a ParaView visualization made from following ADCIRC output files: 
