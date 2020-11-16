@@ -18,6 +18,9 @@ described above.
 
 ## Sample Images
 Sample image of all scripts used together for the 'LL' versions (visualization of Hurricane Ike on TX2020a mesh):
+
 ![](./general-LL-sample.png)
-Sample image of all scripts used together for the 'ML' versions (visualization of Hurricane Laura on CTXCS2017 mesh)
+
+Sample image of all scripts used together for the 'ML' versions (visualization of Hurricane Laura on CTXCS2017 mesh):
+
 ![](./general-ML-sample.png)
