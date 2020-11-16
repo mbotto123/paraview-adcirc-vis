@@ -7,7 +7,7 @@ Python code to help with visualization of ADCIRC results using ParaView. Each di
 
 The ``Load a color palette`` button looks like this: ![](./color_palette_icon.png)
 
-## Creating an XML file for ADCIRC's NetCDF output:
+## Creating an XDMF file for ADCIRC's NetCDF output:
 ADCIRC's netCDF output files are not readable by ParaView and need an accompanying XDMF file. The utility for generating this XDMF file is available in the ASGS repository (link to the repository: https://github.com/jasonfleming/asgs) in the output directory. You will need to clone the ASGS repository and in the output directory run this command ( although you will also need to add compiler options specific to the machine you are using): 
 ```
 make all NETCDF=enable NETCDF4=enable NETCDF4_COMPRESSION=enable
@@ -30,7 +30,7 @@ generateXDMF.x --datafile fort.63.nc --datafile fort.64.nc
 - Make sure the XDMF file and the netCDF output file/files that it depends on are in the same directory. Load the XDMF file by using ParaView's File->Open, select the 'XDMF Reader' option when prompted, and click the 'Apply' button.
 - Now you can load the two color maps that are in the color-maps directory of this repository. To do this, scroll to the ``Display`` section of the ``Properties`` tab, and under ``Coloring`` select the ``Choose preset`` button. In this pop-up window, use the ``Import`` button to load the two color maps.
 
-The ``Choose preset`` button looks like this: 
+The ``Choose preset`` button looks like this: ![](./choose_preset_icon.png)
 
 ## Running Python scripts on ParaView
 - To run a Python script, first select View->Python Shell. Then, click on the Python shell so that it loads the necessary information to run scripts. You can now use the 'Run Script' button and select a script from this repository. Refer to the instructions in each directory's readme file, as some scripts must be run in a certain order.
