@@ -1,4 +1,5 @@
-# This script makes a time annotation for a view of areas around Port Arthur, TX and Lake Charles, LA
+# This script makes a time annotation for a view focusing on a 3D view of the LA-TX border
+# including Port Arthur, TX; Beaumont, TX; Lake Charles, LA; Cameron, LA; Hackberry, LA
 # Time is expressed relative to the starting time of the simulation
 
 # Can handle a ParaView visualization made from following ADCIRC output files: 

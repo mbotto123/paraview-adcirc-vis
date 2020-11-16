@@ -1,3 +1,6 @@
+# Script to add location labels, compatible with zoomToLATXborder3D script
+# coordinates of text base positions were obtained from lat/long values for each location
+
 #### import the simple module from the paraview
 from paraview.simple import *
 #### disable automatic camera reset on 'Show'
@@ -6,6 +9,10 @@ paraview.simple._DisableFirstRenderCameraReset()
 renderView1 = GetActiveViewOrCreate('RenderView')
 
 cam = GetActiveCamera()
+# get the viewUp vector for the camera
+# a scalar multiple of this vector will be added to each bottom coordinate of the text flagpoles
+# to obtain a top coordinate that ensures the text will face the camera
+# if this vector is not added, the text will not properly face the camera
 viewUp = cam.GetViewUp()
 viewUpScale = 0.075
 

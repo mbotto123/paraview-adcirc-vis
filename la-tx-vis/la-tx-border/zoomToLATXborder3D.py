@@ -1,4 +1,5 @@
-# Script to zoom in to an ADCIRC domain, focusing on a 3D view that includes areas around Port Arthur, TX and Lake Charles, LA
+# Script to zoom in to an ADCIRC domain, focusing on a 3D view of the LA-TX border
+# including Port Arthur, TX; Beaumont, TX; Lake Charles, LA; Cameron, LA; Hackberry, LA
 # Prerequisites: blueBrownGreenBathyTopo color map must be loaded into ParaView
 
 # This script can handle a ParaView visualization made from following ADCIRC output files: 
