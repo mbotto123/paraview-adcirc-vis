@@ -1,3 +1,5 @@
+# Script to add location labels, compatible with zoomToHouston3D script
+
 #### import the simple module from the paraview
 from paraview.simple import *
 #### disable automatic camera reset on 'Show'
