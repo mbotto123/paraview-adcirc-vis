@@ -9,7 +9,7 @@ The ``windVec`` script can only be used with the third of these options since it
 
 Some brief descriptions of what each file does:
 - ``zoomToLATX2D-LL`` and ``zoomToLATX2D-ML``: These scripts zoom in to the area of interest, set color mapping properties, and adjust the location of the color bars.
-The abbreaviations 'LL' and 'ML' stand for 'less land' and 'more land'; the reason is that some meshes show more inland Louisiana area and others cut out some of that area. This
+The abbreviations 'LL' and 'ML' stand for 'less land' and 'more land'; the reason is that some meshes show more inland Louisiana area and others cut out some of that area. This
 leads to some differences in location labels and the positioning of the color bars. These differences can be seen in the sample images below.
 - ``labelsLATX2D-LL`` and ``labelsLATX2D-ML``: Add labels to important locations such as cities/peninsulas/lakes, with the same distinction between 'LL' and 'ML' as
 described above.
