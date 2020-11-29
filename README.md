@@ -16,13 +16,13 @@ For example, on Lonestar5 at TACC, the command will be:
 ```
 make all compiler=intel MACHINENAME=lonestar NETCDF=enable NETCDF4=enable NETCDF4_COMPRESSION=enable
 ```
-You should now have the executable generateXDMF.x in the output directory. There is one important requirement of the netCDF files to be used with generateXDMF.x: **your ADCIRC output files must be in netCDF4 format**. You can generate netCDF4 output by setting the NOUTGE, NOUTGV, and NOUTGW parameters to -5 in the fort.15 file.  
+You should now have the executable ``generateXDMF.x`` in the output directory. There is one important requirement of the netCDF files to be used with ``generateXDMF.x``: **your ADCIRC output files must be in netCDF4 format**. You can generate netCDF4 output by setting the ``NOUTGE``, ``NOUTGV``, and ``NOUTGW`` parameters to -5 in the ``fort.15`` file.  
 
-The following line is an example of how to use generateXDMF.x (assuming you have moved the executable to the directory in which you have your ADCIRC output):
+The following line is an example of how to use ``generateXDMF.x`` (assuming you have moved the executable to the directory in which you have your ADCIRC output):
 ```
 generateXDMF.x --datafile maxele.63.nc
 ```
-This generates a file named maxele.63.nc.xmf. You can also combine different output files:
+This generates a file named ``maxele.63.nc.xmf``. You can also combine different output files:
 ```
 generateXDMF.x --datafile fort.63.nc --datafile fort.64.nc
 ```
