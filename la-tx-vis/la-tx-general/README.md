@@ -1,9 +1,9 @@
 # Visualize ADCIRC results in a 2D general view of the LA-TX coast
 
 The scripts in this directory should be used with XDMF files that were created using either of:
-1. a ``fort.63.nc`` file (fort.63.nc.xmf)
-2. a ``maxele.63.nc`` file (fort.63.nc.xmf) , or 
-3. a ``fort.63.nc`` file followed by a ``fort.74.nc`` file (fort.63.nc_fort.74.nc.xmf). 
+1. a ``fort.63.nc`` file (XDMF file name: ``fort.63.nc.xmf``)
+2. a ``maxele.63.nc`` file (XDMF file name: ``maxele.63.nc.xmf``) , or 
+3. a ``fort.63.nc`` file followed by a ``fort.74.nc`` file (XDMF file name ``fort.63.nc_fort.74.nc.xmf``). 
 
 The ``windVec`` script can only be used with the third of these options since it must contain winds data.
 
