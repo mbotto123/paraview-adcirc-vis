@@ -41,6 +41,8 @@ generateXDMF.x --datafile fort.63.nc --datafile fort.64.nc
 
 The ``Choose preset`` button looks like this: ![](./choose_preset_icon.png)
 
-### Running Python scripts on ParaView
-- To run a Python script, first select View->Python Shell. Then, click on the Python shell so that it loads the necessary information to run scripts. You can now use the 'Run Script' button and select a script from this repository. Refer to the instructions in each directory's readme file, as some scripts must be run in a certain order.
-
+### Running Python scripts from ParaView's GUI
+#### Option 1 : ParaView's built-in Python Shell
+To run a Python script, first select View->Python Shell. Then, click on the Python shell so that it loads the necessary information to run scripts (you should see the line ``from paraview.simple import *`` appear in the shell). You can now use the ``Run Script`` button and select a script from this repository. Refer to the instructions in each directory's readme file, as some scripts must be run in a certain order. Make sure to close the Python shell after running the scripts, since having it open changes the proportions of visualization elements such as color bars and labels.
+#### Option 2 : Macros 
+You can also run Python scripts without using the built-in shell by loading them as macros. Select Macros->'Add new macro...' and choose a script. The name of the script will now appear at the top right of the ParaView toolbar, and you can run the script by clicking on its name. ParaView will remember macros between sessions so you only need to load it once; however, if you make any changes to the script, you will need to delete the macro and load it again.
