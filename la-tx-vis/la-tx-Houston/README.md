@@ -5,6 +5,8 @@ The scripts in this directory should be used with XDMF files that were created u
 2. a ``maxele.63.nc`` file (XDMF file name:``maxele.63.nc.xmf``) , or 
 3. a ``fort.63.nc`` file followed by a ``fort.74.nc`` file (XDMF file name:``fort.63.nc_fort.74.nc.xmf``). Winds data is not used by any of the scripts in this directory, but the scripts have been made compatible with this type of input file regardless for convenience.
 
+The ``time`` script can only be used with the first or third options since it only applies to time series data.
+
 Some brief descriptions of what each file does:
 - ``zoomToHouston3D`` and ``zoomToHoustonBeaumont3D``: These scripts zoom in to the area of interest, set color mapping properties, and adjust the location of the color bars.
 - ``labelsHouston`` and ``labelsHoustonBeaumont``: Add labels to important locations such as cities/peninsulas/lakes.
