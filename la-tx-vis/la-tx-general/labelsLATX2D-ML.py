@@ -96,7 +96,7 @@ text6Display.FontSize = 30
 text6Display.Bold = 1
 text6Display.Shadow = 1
 text6Display.Justification = 'Left'
-text6Display.BillboardPosition = [-93.2174, 30.2266, 0.0]
+text6Display.BillboardPosition = [-93.2174, 30.2266, 0.05]
 
 sphere6 = Sphere()
 sphere6.Center = [-93.2174, 30.2266, 0.0]
@@ -112,7 +112,7 @@ text7Display.FontSize = 28
 text7Display.Bold = 1
 text7Display.Shadow = 1
 text7Display.Justification = 'Right'
-text7Display.BillboardPosition = [-93.9399, 29.8850, 0.0]
+text7Display.BillboardPosition = [-93.9399, 29.8850, 0.05]
 
 sphere7 = Sphere()
 sphere7.Center = [-93.9399, 29.8850, 0.0]
