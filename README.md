@@ -35,9 +35,10 @@ This generates a file named ``maxele.63.nc.xmf``. You can also combine different
 ```
 generateXDMF.x --datafile fort.63.nc --datafile fort.64.nc
 ```
-### Loading color maps into ParaView
+### Importing color maps into ParaView
 - Make sure the XDMF file and the netCDF output file/files that it depends on are in the same directory. Load the XDMF file by using ParaView's File->Open, select the 'XDMF Reader' option when prompted, and click the 'Apply' button.
-- Now you can load the two color maps that are in the color-maps directory of this repository. To do this, scroll to the ``Display`` section of the ``Properties`` tab, and under ``Coloring`` select the ``Choose preset`` button. In this pop-up window, use the ``Import`` button to load the two color maps.
+- Now you can load the color maps that are in the color-maps directory of this repository. To do this, scroll to the ``Display`` section of the ``Properties`` tab, and under ``Coloring`` select the ``Choose preset`` button. In this pop-up window, use the ``Import`` button to load each color map. This step is just to load the color maps so that they are stored in ParaView; the Python scripts will select the correct color map for the corresponding property.
+- You only have to do this import step once. Once you close the session where you imported the color maps, then the next times you use ParaView, it should remember the files that you imported.
 
 The ``Choose preset`` button looks like this: ![](./choose_preset_icon.png)
 
