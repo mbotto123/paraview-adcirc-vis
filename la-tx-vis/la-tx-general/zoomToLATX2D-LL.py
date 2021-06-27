@@ -97,16 +97,12 @@ threshold1Display.SetScalarBarVisibility(renderView1, True)
 
 # get color transfer function/color map for 'zeta' or 'zeta_max'
 zetaLUT = GetColorTransferFunction(threshold1.Scalars[1])
-zetaLUT.RGBPoints = [-2.651, 0.231373, 0.298039, 0.752941, 0.8777015514658117, 0.865003, 0.865003, 0.865003, 4.406403102931623, 0.705882, 0.0156863, 0.14902]
-zetaLUT.ScalarRangeInitialized = 1.0
 
 # get opacity transfer function/opacity map for 'zeta' or 'zeta_max'
 zetaPWF = GetOpacityTransferFunction(threshold1.Scalars[1])
-zetaPWF.Points = [-2.651, 0.0, 0.5, 0.0, 4.406403102931623, 1.0, 0.5, 0.0]
-zetaPWF.ScalarRangeInitialized = 1
 
 # Apply a preset using its name. Note this may not work as expected when presets have duplicate names.
-zetaLUT.ApplyPreset('erdc_rainbow_dark', True)
+zetaLUT.ApplyPreset('RdYlBu_Brewer', True)
 
 # Rescale transfer function
 zetaLUT.RescaleTransferFunction(0.0, 5.0)
