@@ -17,7 +17,7 @@ Python scripts.
 The ``Load a color palette`` button looks like this: ![](./color_palette_icon.png)
 
 ### Creating an XDMF file for ADCIRC's NetCDF output
-ADCIRC's netCDF output files are not readable by ParaView and need an accompanying XDMF file. The utility for generating this XDMF file is available in the ASGS repository (link to the repository: https://github.com/jasonfleming/asgs) in the output directory. You will need to clone the ASGS repository and in the output directory run this command ( although you will also need to add compiler options specific to the machine you are using): 
+ADCIRC's netCDF output files are not readable by ParaView and need an accompanying XDMF file. The utility for generating this XDMF file is available in the ASGS repository (link to the repository: https://github.com/StormSurgeLive/asgs) in the output directory. You will need to clone the ASGS repository and in the output directory run this command ( although you will also need to add compiler options specific to the machine you are using): 
 ```
 make all NETCDF=enable NETCDF4=enable NETCDF4_COMPRESSION=enable
 ```
