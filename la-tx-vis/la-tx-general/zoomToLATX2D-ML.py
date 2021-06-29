@@ -29,8 +29,8 @@ renderView1.ResetCamera()
 
 # set the camera position
 camera = GetActiveCamera()
-camera.SetFocalPoint(-92.13150887352528, 28.58515932960801, -95.18622433474408)
-camera.SetPosition(-92.13150887352528, 28.58515932960801, 9.100680396002447)
+camera.SetFocalPoint(-92.27727807161301, 28.578533456967655, -94.65517642196974)
+camera.SetPosition(-92.27727807161301, 28.578533456967655, 9.631728308776758)
 camera.SetViewUp(0.0, 1.0, 0.0)
 Render()
 
@@ -59,7 +59,7 @@ bathymetricDepthLUTColorBar.ComponentTitle = ''
 bathymetricDepthLUTColorBar.AutoOrient = 0
 bathymetricDepthLUTColorBar.Orientation = 'Horizontal'
 bathymetricDepthLUTColorBar.WindowLocation = 'AnyLocation'
-bathymetricDepthLUTColorBar.Position = [0.1991672449687718, 0.9223841079812964]
+bathymetricDepthLUTColorBar.Position = [0.28021209328609614, 0.9236694550249982]
 bathymetricDepthLUTColorBar.Title = 'Bathymetry/Topography (m)'
 bathymetricDepthLUTColorBar.AddRangeLabels = 0
 bathymetricDepthLUTColorBar.ScalarBarLength = 0.2
@@ -123,7 +123,7 @@ zetaLUTColorBar.ComponentTitle = ''
 zetaLUTColorBar.AutoOrient = 0
 zetaLUTColorBar.Orientation = 'Horizontal'
 zetaLUTColorBar.WindowLocation = 'AnyLocation'
-zetaLUTColorBar.Position = [0.6099930603747399, 0.9205298013245033]
+zetaLUTColorBar.Position = [0.6133330737347932, 0.9236694550249982]
 zetaLUTColorBar.Title = 'Water Surface Elevation (m)'
 zetaLUTColorBar.AddRangeLabels = 0
 zetaLUTColorBar.ScalarBarLength = 0.2
