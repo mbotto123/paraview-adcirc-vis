@@ -14,13 +14,13 @@ leads to some differences in location labels and the positioning of the color ba
 - ``labelsLATX2D-LL`` and ``labelsLATX2D-ML``: Add labels to important locations such as cities/peninsulas/lakes, with the same distinction between 'LL' and 'ML' as
 described above.
 - ``windVecLATX2D``: Adds scaled wind vectors and is compatible with any mesh.
-- ``timeLATX2D``: Adds a time annotation relative to the start of the simulation in hours (first timestep will always read +0 hours). Compatible with any mesh.
+- ``relTimeLATX2D``: Adds a time annotation relative to the start of the simulation in hours (first timestep will always read +0 hours). Compatible with any mesh.
 
 ## Sample Images
-Sample image of all scripts used together for the 'LL' versions (visualization of Hurricane Ike on TX2020a mesh):
-
-![](./general-LL-sample.png)
-
-Sample image of all scripts used together for the 'ML' versions (visualization of Hurricane Laura on CTXCS2017 mesh):
+Sample image of all scripts (except `relTimeLATX2D`) used together for the 'ML' versions (also uses the `fullAnnotation` utility):
 
 ![](./general-ML-sample.png)
+
+Sample image of all scripts used together for the 'LL' versions (visualization of Hurricane Ike; also uses the `discretizeColorMaps` utility):
+
+![](./general-LL-sample.png)
