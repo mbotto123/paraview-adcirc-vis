@@ -77,31 +77,31 @@ elif (FindSource('maxele.63.nc.xmf')) is not None:
 
 #### This section defines the color mapping properties for water surface elevation ####
 # create a new 'Threshold' to filter out ADCIRC missing values for water surface elevation
-threshold1 = Threshold(Input=generalSource)
+zetaThreshold = Threshold(registrationName='WaterSurfEleThreshold',Input=generalSource)
 if (FindSource('maxele.63.nc.xmf')) is not None:
-	threshold1.Scalars = ['POINTS', 'zeta_max']
+	zetaThreshold.Scalars = ['POINTS', 'zeta_max']
 else:
-	threshold1.Scalars = ['POINTS', 'zeta']
+	zetaThreshold.Scalars = ['POINTS', 'zeta']
 	
-threshold1.ThresholdRange = [-9999.0, 7982.183]
+zetaThreshold.ThresholdRange = [-9999.0, 7982.183]
 
 # show data in view
-threshold1Display = Show(threshold1, renderView1, 'UnstructuredGridRepresentation')
+zetaThresholdDisplay = Show(zetaThreshold, renderView1, 'UnstructuredGridRepresentation')
 
 # set scalar coloring
-ColorBy(threshold1Display, ('POINTS', threshold1.Scalars[1]))
+ColorBy(zetaThresholdDisplay, ('POINTS', zetaThreshold.Scalars[1]))
 
 # rescale color and/or opacity maps used to include current data range
-threshold1Display.RescaleTransferFunctionToDataRange(True, False)
+zetaThresholdDisplay.RescaleTransferFunctionToDataRange(True, False)
 
 # show color bar/color legend
-threshold1Display.SetScalarBarVisibility(renderView1, True)
+zetaThresholdDisplay.SetScalarBarVisibility(renderView1, True)
 
 # get color transfer function/color map for 'zeta' or 'zeta_max'
-zetaLUT = GetColorTransferFunction(threshold1.Scalars[1])
+zetaLUT = GetColorTransferFunction(zetaThreshold.Scalars[1])
 
 # get opacity transfer function/opacity map for 'zeta' or 'zeta_max'
-zetaPWF = GetOpacityTransferFunction(threshold1.Scalars[1])
+zetaPWF = GetOpacityTransferFunction(zetaThreshold.Scalars[1])
 
 # Apply a preset using its name. Note this may not work as expected when presets have duplicate names.
 zetaLUT.ApplyPreset('RdYlBu_Brewer', True)
@@ -114,8 +114,8 @@ zetaPWF.RescaleTransferFunction(0.0, 5.0)
 
 zetaLUT.AutomaticRescaleRangeMode = 'Never'
 
-# Properties modified on threshold1Display
-threshold1Display.Opacity = 0.9
+# Properties modified on zetaThresholdDisplay
+zetaThresholdDisplay.Opacity = 0.9
 
 # get color legend/bar for zetaLUT in view renderView1
 zetaLUTColorBar = GetScalarBar(zetaLUT, renderView1)
