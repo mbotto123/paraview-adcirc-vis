@@ -45,11 +45,11 @@ elif (FindSource('maxele.63.nc.xmf')) is not None:
     sourceName = 'maxele.63.nc.xmf'
 	
 # create a new 'Programmable Annotation'
-programmableAnnotation1 = ProgrammableAnnotation(registrationName='ProgrammableAnnotation1', Input=generalSource)
-programmableAnnotation1.PythonPath = ''
+timeAnnotation = ProgrammableAnnotation(registrationName='TimeAnnotation', Input=generalSource)
+timeAnnotation.PythonPath = ''
 
-# Properties modified on programmableAnnotation1
-programmableAnnotation1.Script = """from datetime import datetime, timedelta
+# Properties modified on timeAnnotation
+timeAnnotation.Script = """from datetime import datetime, timedelta
 from os import path
 from re import findall
 
@@ -94,11 +94,11 @@ else:
 to.AddColumn(arr)"""
 
 # show data in view
-programmableAnnotation1Display = Show(programmableAnnotation1, renderView1, 'TextSourceRepresentation')
+timeAnnotationDisplay = Show(timeAnnotation, renderView1, 'TextSourceRepresentation')
 
-programmableAnnotation1Display.Bold = 1
-programmableAnnotation1Display.Shadow = 1
-programmableAnnotation1Display.FontSize = 21
+timeAnnotationDisplay.Bold = 1
+timeAnnotationDisplay.Shadow = 1
+timeAnnotationDisplay.FontSize = 21
 
 # update the view to ensure updated data information
 renderView1.Update()
