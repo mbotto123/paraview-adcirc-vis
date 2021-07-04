@@ -12,7 +12,7 @@ Python scripts.
 
 ## Getting Started
 ### First steps
-- Download ParaView (version 5.8.0 or later)
+- Download ParaView (version 5.9.0 or later)
 - (Optional) Change the background color in ParaView. The default background color has a bluish tint so it may not provide enough contrast for visualizations that use large amounts of blue. To change the background color, select the ``Load a color palette`` button in the toolbar, select ``Edit Current Palette ...`` from the drop-down menu, scroll down to the ``Background`` section, and click on ``Background``. You can now specify RGB values. Use 107 for all three for a more neutral gray color.
 
 The ``Load a color palette`` button looks like this: ![](./color_palette_icon.png)
