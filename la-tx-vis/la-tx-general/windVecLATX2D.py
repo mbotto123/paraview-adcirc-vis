@@ -11,29 +11,30 @@ paraview.simple._DisableFirstRenderCameraReset()
 renderView1 = GetActiveViewOrCreate('RenderView')
 generalSource = FindSource('fort.63.nc_fort.74.nc.xmf')
 
-# create a new 'Surface Vectors'
-surfaceVectors1 = SurfaceVectors(Input=generalSource)
-surfaceVectors1.SelectInputVectors = ['POINTS', 'windVel']
-surfaceVectors1Display = Show(surfaceVectors1, renderView1, 'UnstructuredGridRepresentation')
+# SurfaceVectors filter processes wind vector data for input to the Glyph filter later
+windSurfaceVec = SurfaceVectors(registrationName='WindSurfaceVec',Input=generalSource)
+windSurfaceVec.SelectInputVectors = ['POINTS', 'windVel']
+windSurfaceVecDisplay = Show(windSurfaceVec, renderView1, 'UnstructuredGridRepresentation')
 
-# create a new 'Glyph'
-glyph1 = Glyph(Input=surfaceVectors1, GlyphType='Arrow')
-glyph1.OrientationArray = ['POINTS', 'windVel']
-glyph1.GlyphTransform = 'Transform2'
-glyph1.ScaleArray = ['POINTS', 'windVel']
+# Create Glyph filter to display the vectors
+# 3D arrow Glyph used for compatibility with billboard text labels
+windVecGlyphs = Glyph(registrationName='WindVecGlyph',Input=windSurfaceVec, GlyphType='Arrow')
+windVecGlyphs.OrientationArray = ['POINTS', 'windVel']
+windVecGlyphs.GlyphTransform = 'Transform2'
+windVecGlyphs.ScaleArray = ['POINTS', 'windVel']
 # This scale factor is intended for hurricane-level winds; it will be too small for normal winds
-glyph1.ScaleFactor = 0.01
-glyph1.MaximumNumberOfSamplePoints = 10000
-glyph1.GlyphType.ShaftRadius = 0.02
-glyph1.GlyphMode = 'Uniform Spatial Distribution (Surface Sampling)'
+windVecGlyphs.ScaleFactor = 0.01
+windVecGlyphs.MaximumNumberOfSamplePoints = 10000
+windVecGlyphs.GlyphType.ShaftRadius = 0.02
+windVecGlyphs.GlyphMode = 'Uniform Spatial Distribution (Surface Sampling)'
 
 # Filter out wind vectors on dry nodes
-threshold2 = Threshold(Input=glyph1)
-threshold2.Scalars = ['POINTS', 'zeta']
-threshold2.ThresholdRange = [-9999.0, 7877.455]
+windVecThreshold = Threshold(registrationName='WindVecThreshold',Input=windVecGlyphs)
+windVecThreshold.Scalars = ['POINTS', 'zeta']
+windVecThreshold.ThresholdRange = [-9999.0, 7877.455]
 
-threshold2Display = Show(threshold2, renderView1, 'UnstructuredGridRepresentation')
-ColorBy(threshold2Display, None)
+windVecThresholdDisplay = Show(windVecThreshold, renderView1, 'UnstructuredGridRepresentation')
+ColorBy(windVecThresholdDisplay, None)
 
-# update the view to ensure updated data information
+# Update render view with all changes at once
 renderView1.Update()

@@ -8,84 +8,84 @@ paraview.simple._DisableFirstRenderCameraReset()
 renderView1 = GetActiveViewOrCreate('RenderView')
 
 ## Houston
-text1 = Text()
-text1Display = Show(text1, renderView1, 'TextSourceRepresentation')
-text1Display.TextPropMode = 'Billboard 3D Text'
-text1.Text = 'Houston '
-text1Display.FontSize = 30
-text1Display.Bold = 1
-text1Display.Shadow = 1
-text1Display.Justification = 'Right'
-text1Display.BillboardPosition = [-95.3698, 29.7604, 0.05]
+textHouston = Text(registrationName='textHouston')
+textHoustonDisplay = Show(textHouston, renderView1, 'TextSourceRepresentation')
+textHoustonDisplay.TextPropMode = 'Billboard 3D Text'
+textHouston.Text = 'Houston '
+textHoustonDisplay.FontSize = 30
+textHoustonDisplay.Bold = 1
+textHoustonDisplay.Shadow = 1
+textHoustonDisplay.Justification = 'Right'
+textHoustonDisplay.BillboardPosition = [-95.3698, 29.7604, 0.05]
 
-sphere1 = Sphere()
-sphere1.Center = [-95.3698, 29.7604, 0.0]
-sphere1.Radius = 0.025
-sphere1Display = Show(sphere1, renderView1, 'GeometryRepresentation')
+pinHouston = Sphere(registrationName='pinHouston')
+pinHouston.Center = [-95.3698, 29.7604, 0.0]
+pinHouston.Radius = 0.025
+pinHoustonDisplay = Show(pinHouston, renderView1, 'GeometryRepresentation')
 
 ## Galveston
-text2 = Text()
-text2Display = Show(text2, renderView1, 'TextSourceRepresentation')
-text2Display.TextPropMode = 'Billboard 3D Text'
-text2.Text = 'Galveston '
-text2Display.FontSize = 30
-text2Display.Bold = 1
-text2Display.Shadow = 1
-text2Display.Justification = 'Right'
-text2Display.BillboardPosition = [-94.7977, 29.3013, 0.05]
+textGalveston = Text(registrationName='textGalveston')
+textGalvestonDisplay = Show(textGalveston, renderView1, 'TextSourceRepresentation')
+textGalvestonDisplay.TextPropMode = 'Billboard 3D Text'
+textGalveston.Text = 'Galveston '
+textGalvestonDisplay.FontSize = 30
+textGalvestonDisplay.Bold = 1
+textGalvestonDisplay.Shadow = 1
+textGalvestonDisplay.Justification = 'Right'
+textGalvestonDisplay.BillboardPosition = [-94.7977, 29.3013, 0.05]
 
-sphere2 = Sphere()
-sphere2.Center = [-94.7977, 29.3013, 0.0]
-sphere2.Radius = 0.025
-sphere2Display = Show(sphere2, renderView1, 'GeometryRepresentation')
+pinGalveston = Sphere(registrationName='pinGalveston')
+pinGalveston.Center = [-94.7977, 29.3013, 0.0]
+pinGalveston.Radius = 0.025
+pinGalvestonDisplay = Show(pinGalveston, renderView1, 'GeometryRepresentation')
 
 ## Bolivar Peninsula
-text3 = Text()
-text3Display = Show(text3, renderView1, 'TextSourceRepresentation')
-text3Display.TextPropMode = 'Billboard 3D Text'
-text3.Text = ' Bolivar Peninsula'
-text3Display.FontSize = 25
-text3Display.Bold = 1
-text3Display.Shadow = 1
-text3Display.Justification = 'Left'
-text3Display.BillboardPosition = [-94.5799, 29.4783, 0.05]
+textBolivarP = Text(registrationName='textBolivarP')
+textBolivarPDisplay = Show(textBolivarP, renderView1, 'TextSourceRepresentation')
+textBolivarPDisplay.TextPropMode = 'Billboard 3D Text'
+textBolivarP.Text = ' Bolivar Peninsula'
+textBolivarPDisplay.FontSize = 25
+textBolivarPDisplay.Bold = 1
+textBolivarPDisplay.Shadow = 1
+textBolivarPDisplay.Justification = 'Left'
+textBolivarPDisplay.BillboardPosition = [-94.5799, 29.4783, 0.05]
 
-sphere3 = Sphere()
-sphere3.Center = [-94.5799, 29.4783, 0.0]
-sphere3.Radius = 0.025
-sphere3Display = Show(sphere3, renderView1, 'GeometryRepresentation')
+pinBolivarP = Sphere(registrationName='pinBolivarP')
+pinBolivarP.Center = [-94.5799, 29.4783, 0.0]
+pinBolivarP.Radius = 0.025
+pinBolivarPDisplay = Show(pinBolivarP, renderView1, 'GeometryRepresentation')
 
 ## New Orleans
-text4 = Text()
-text4Display = Show(text4, renderView1, 'TextSourceRepresentation')
-text4Display.TextPropMode = 'Billboard 3D Text'
-text4.Text = ' New Orleans'
-text4Display.FontSize = 30
-text4Display.Bold = 1
-text4Display.Shadow = 1
-text4Display.Justification = 'Left'
-text4Display.BillboardPosition = [-90.0715, 29.9511, 0.05]
+textNewOrleans = Text(registrationName='textNewOrleans')
+textNewOrleansDisplay = Show(textNewOrleans, renderView1, 'TextSourceRepresentation')
+textNewOrleansDisplay.TextPropMode = 'Billboard 3D Text'
+textNewOrleans.Text = ' New Orleans'
+textNewOrleansDisplay.FontSize = 30
+textNewOrleansDisplay.Bold = 1
+textNewOrleansDisplay.Shadow = 1
+textNewOrleansDisplay.Justification = 'Left'
+textNewOrleansDisplay.BillboardPosition = [-90.0715, 29.9511, 0.05]
 
-sphere4 = Sphere()
-sphere4.Center = [-90.0715, 29.9511, 0.0]
-sphere4.Radius = 0.025
-sphere4Display = Show(sphere4, renderView1, 'GeometryRepresentation')
+pinNewOrleans = Sphere(registrationName='pinNewOrleans')
+pinNewOrleans.Center = [-90.0715, 29.9511, 0.0]
+pinNewOrleans.Radius = 0.025
+pinNewOrleansDisplay = Show(pinNewOrleans, renderView1, 'GeometryRepresentation')
 
 ## Lake Pontchartrain
-text5 = Text()
-text5Display = Show(text5, renderView1, 'TextSourceRepresentation')
-text5Display.TextPropMode = 'Billboard 3D Text'
-text5.Text = ' Lake Pontchartrain'
-text5Display.FontSize = 25
-text5Display.Bold = 1
-text5Display.Shadow = 1
-text5Display.Justification = 'Left'
-text5Display.BillboardPosition = [-90.1121, 30.2051, 0.05]
+textPontchartrain = Text(registrationName='textPontchartrain')
+textPontchartrainDisplay = Show(textPontchartrain, renderView1, 'TextSourceRepresentation')
+textPontchartrainDisplay.TextPropMode = 'Billboard 3D Text'
+textPontchartrain.Text = ' Lake Pontchartrain'
+textPontchartrainDisplay.FontSize = 25
+textPontchartrainDisplay.Bold = 1
+textPontchartrainDisplay.Shadow = 1
+textPontchartrainDisplay.Justification = 'Left'
+textPontchartrainDisplay.BillboardPosition = [-90.1121, 30.2051, 0.05]
 
-sphere5 = Sphere()
-sphere5.Center = [-90.1121, 30.2051, 0.0]
-sphere5.Radius = 0.025
-sphere5Display = Show(sphere5, renderView1, 'GeometryRepresentation')
+pinPontchartrain = Sphere(registrationName='pinPontchartrain')
+pinPontchartrain.Center = [-90.1121, 30.2051, 0.0]
+pinPontchartrain.Radius = 0.025
+pinPontchartrainDisplay = Show(pinPontchartrain, renderView1, 'GeometryRepresentation')
 
 ## Update render view with all changes at once
 renderView1.Update()
