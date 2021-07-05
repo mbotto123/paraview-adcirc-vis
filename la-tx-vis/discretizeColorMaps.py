@@ -16,5 +16,5 @@ else:
 bathymetricDepthLUT = GetColorTransferFunction('BathymetricDepth')
 
 # Discretize color maps by reducing the number of table values
-zetaLUT.NumberOfTableValues = 50
-bathymetricDepthLUT.NumberOfTableValues = 50
+zetaLUT.NumberOfTableValues = 30
+bathymetricDepthLUT.NumberOfTableValues = 30
