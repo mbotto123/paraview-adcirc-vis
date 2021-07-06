@@ -116,6 +116,7 @@ zetaLUT.AutomaticRescaleRangeMode = 'Never'
 
 # Properties modified on zetaThresholdDisplay
 zetaThresholdDisplay.Opacity = 0.95
+zetaThresholdDisplay.Diffuse = 0.9
 
 # get color legend/bar for zetaLUT in view renderView1
 zetaLUTColorBar = GetScalarBar(zetaLUT, renderView1)
