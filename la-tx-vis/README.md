@@ -15,13 +15,16 @@ This directory also includes general utility scripts, which can be used with any
 
 ## Annotation utility scripts
 `fullAnnotation` and `timeAnnotation` provide more descriptive annotations and are mostly compatible with any visualization; however, `timeAnnotation` should not be used with `maxele` files.
-The following bullet points summarize what each does:
+### Summary
 - `timeAnnotation` creates a date/time annotation in UTC (formatted YYYY-MM-DD HH:MM:SS) placed in the top-left corner of the visualization.
 - `fullAnnotation` creates the same date/time annotation and also adds more information such as the model and grid name, and storm/advisory information.
 
-In both cases, the time updates automatically as you cycle through different time steps in the visualization, so these annotations can be used for animations as well as still images. **These scripts 
-expect that the header of your netCDF file is formatted according to ASGS standards.** If the header format is significantly different, then the annotations may not work as expected.
+In both cases, the time updates automatically as you cycle through different time steps in the visualization, so these annotations can be used for animations as well as still images. 
 
+### Compatibility
+- **`fullAnnotation` expects that the header of your netCDF file is formatted according to ASGS standards.** If the header format is significantly different, then the annotations may not work as expected.
+- `timeAnnotation` should be compatible with any netCDF file that has a line such as `time:units = "seconds since 2020-07-22 00:00:00" ;` in the header.
+### Usage
 Both scripts need information from the header of the netCDF file used for visualization, so there are two required steps before using them:
 1. First, run the `netcdf_header_info.sh` utility - found in the `paraview-adcirc-vis/utilities` directory - on the netCDF file you want to visualize. If your visualization uses more than one netCDF file,
 you only need to run the utility on one of them. Note that this utility requires you to have a netCDF installation, with the `ncdump` utility on your path.
