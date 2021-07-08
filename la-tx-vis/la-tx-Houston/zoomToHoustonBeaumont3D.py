@@ -1,5 +1,5 @@
 # Script to zoom in to an ADCIRC domain, focusing on a 3D view that includes the Galveston-Houston area and Beaumont
-# Prerequisites: blueBrownGreenBathyTopo color map must be loaded into ParaView
+# Prerequisites: blueBrownGreenBathyTopo and RdYlBu_Brewer color maps must be loaded into ParaView
 
 # This script can handle a ParaView visualization made from following ADCIRC output files: 
 # maxele.63.nc, fort.63.nc, or combined fort.63.nc and fort.74.nc
@@ -28,8 +28,8 @@ renderView1.ResetCamera()
 
 # set the camera position
 camera = GetActiveCamera()
-camera.SetFocalPoint(-94.98224524821488, 33.02532997211892, -2.816594275585327)
-camera.SetPosition(-94.64013542489101, 28.42255367285664, 1.0343709904764105)
+camera.SetFocalPoint(-94.73016732588835, 32.43587279283372, -2.4045719277885382)
+camera.SetPosition(-94.38805750256448, 27.833096493571567, 1.446393338273202)
 camera.SetViewUp(0.013093331933432064, 0.642206844249245, 0.7664195547207202)
 Render()
 
@@ -111,16 +111,12 @@ threshold1Display.SetScalarBarVisibility(renderView1, True)
 
 # get color transfer function/color map for 'zeta' or 'zeta_max'
 zetaLUT = GetColorTransferFunction(threshold1.Scalars[1])
-zetaLUT.RGBPoints = [-2.651, 0.231373, 0.298039, 0.752941, 0.8777015514658117, 0.865003, 0.865003, 0.865003, 4.406403102931623, 0.705882, 0.0156863, 0.14902]
-zetaLUT.ScalarRangeInitialized = 1.0
 
 # get opacity transfer function/opacity map for 'zeta' or 'zeta_max'
 zetaPWF = GetOpacityTransferFunction(threshold1.Scalars[1])
-zetaPWF.Points = [-2.651, 0.0, 0.5, 0.0, 4.406403102931623, 1.0, 0.5, 0.0]
-zetaPWF.ScalarRangeInitialized = 1
 
 # Apply a preset using its name. Note this may not work as expected when presets have duplicate names.
-zetaLUT.ApplyPreset('erdc_rainbow_dark', True)
+zetaLUT.ApplyPreset('RdYlBu_Brewer', True)
 
 # Rescale transfer function
 zetaLUT.RescaleTransferFunction(0.0, 5.0)
