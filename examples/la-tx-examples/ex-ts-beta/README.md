@@ -11,12 +11,12 @@ since here the XDMF file is already provided). These instructions also explain h
 Now run the ``zoomToHouston3D.py`` script from this directory. You can either run it from ParaView's built-in Python shell, or load it as a macro. After running this script, the
 visualization should look like this:
 
-![](./beta-step1.png)
+![](./beta-step2.png)
 
 ## Step 3: Apply labels script
 After running the ``labelsHouston.py`` script, the visualization should look like this:
 
-![](./beta-step2.png)
+![](./beta-step3.png)
 
 ## Step 4: Change upper bound of the water surface elevation color map
 Now we will use the ``changeZetaUpBound.py`` script to change the upper bound of the water surface elevation color map from 5 meters to 4 meters. After running this script, a
