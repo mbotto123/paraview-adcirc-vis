@@ -29,9 +29,9 @@ renderView1.ResetCamera()
 
 # set the camera position
 camera = GetActiveCamera()
-camera.SetFocalPoint(-85.68415868826808, 109.73542352640422, -66.23746845234106)
-camera.SetPosition(-93.77671940167772, 28.84649367662483, 0.9698449093857261)
-camera.SetViewUp(-0.00935122333748162, 0.6395860096329778, 0.7686626639195226)
+camera.SetFocalPoint(-95.79131995311259, 112.51719975859382, -62.32762251154117)
+camera.SetPosition(-93.57896950610788, 28.297062100983442, 1.1342195581442112)
+camera.SetViewUp(-0.0787160717746916, 0.5986123359172563, 0.797161872728524)
 Render()
 
 # find source
@@ -66,12 +66,12 @@ bathymetricDepthLUT.AutomaticRescaleRangeMode = 'Never'
 bathymetricDepthLUTColorBar = GetScalarBar(bathymetricDepthLUT, renderView1)
 bathymetricDepthLUTColorBar.ComponentTitle = ''
 bathymetricDepthLUTColorBar.AutoOrient = 0
-bathymetricDepthLUTColorBar.Orientation = 'Vertical'
+bathymetricDepthLUTColorBar.Orientation = 'Horizontal'
 bathymetricDepthLUTColorBar.WindowLocation = 'AnyLocation'
-bathymetricDepthLUTColorBar.Position = [0.014129077029839513, 0.7101986754966899]
+bathymetricDepthLUTColorBar.Position = [0.4461287659431904, 0.8996311649840824]
 bathymetricDepthLUTColorBar.Title = 'Bathymetry/Topography (m)'
 bathymetricDepthLUTColorBar.AddRangeLabels = 0
-bathymetricDepthLUTColorBar.ScalarBarLength = 0.25
+bathymetricDepthLUTColorBar.ScalarBarLength = 0.2
 bathymetricDepthLUTColorBar.ScalarBarThickness = 16
 #### end definition of bathymetry/topography color map properties ####
 
@@ -84,7 +84,7 @@ Hide(generalSource, renderView1)
 bathyTopoScalarWarpDisplay.SetScalarBarVisibility(renderView1, True)
 renderView1.Update()
 bathymetricDepthLUTColorBar.WindowLocation = 'AnyLocation'
-bathymetricDepthLUTColorBar.Position = [0.014129077029839513, 0.7101986754966899]
+bathymetricDepthLUTColorBar.Position = [0.4461287659431904, 0.8996311649840824]
 #### end definition of bathymetry/topography scalar warp properties ####
 
 #### This section defines the color mapping properties for water surface elevation ####
@@ -130,12 +130,12 @@ zetaLUT.AutomaticRescaleRangeMode = 'Never'
 zetaLUTColorBar = GetScalarBar(zetaLUT, renderView1)
 zetaLUTColorBar.ComponentTitle = ''
 zetaLUTColorBar.AutoOrient = 0
-zetaLUTColorBar.Orientation = 'Vertical'
+zetaLUTColorBar.Orientation = 'Horizontal'
 zetaLUTColorBar.WindowLocation = 'AnyLocation'
-zetaLUTColorBar.Position = [0.07702984038861965, 0.7101986754966899]
+zetaLUTColorBar.Position = [0.7248275862068965, 0.8996311649840824]
 zetaLUTColorBar.Title = 'Water Surface Elevation (m)'
 zetaLUTColorBar.AddRangeLabels = 0
-zetaLUTColorBar.ScalarBarLength = 0.25
+zetaLUTColorBar.ScalarBarLength = 0.2
 zetaLUTColorBar.ScalarBarThickness = 16
 #### end definition of water surface elevation color map properties ####
 
@@ -149,7 +149,7 @@ zetaScalarWarpDisplay.SetScalarBarVisibility(renderView1, True)
 #ColorBy(zetaScalarWarpDisplay, ('POINTS', zetaThreshold.Scalars[1]))
 renderView1.Update()
 zetaLUTColorBar.WindowLocation = 'AnyLocation'
-zetaLUTColorBar.Position = [0.07702984038861965, 0.7101986754966899]
+zetaLUTColorBar.Position = [0.7248275862068965, 0.8996311649840824]
 
 # get display properties
 zetaScalarWarpDisplay = GetDisplayProperties(zetaScalarWarp, view=renderView1)
@@ -163,7 +163,7 @@ zetaScalarWarpDisplay.RescaleTransferFunctionToDataRange(True, False)
 zetaScalarWarpDisplay.SetScalarBarVisibility(renderView1, True)
 # change scalar bar placement
 zetaLUTColorBar.WindowLocation = 'AnyLocation'
-zetaLUTColorBar.Position = [0.07702984038861965, 0.7101986754966899]
+zetaLUTColorBar.Position = [0.7248275862068965, 0.8996311649840824]
 # Rescale transfer function
 zetaLUT.RescaleTransferFunction(0.0, 5.0)
 # Rescale transfer function
