@@ -1,4 +1,4 @@
-# Script to discretize color maps
+# Script to make the water surface elevation color map appear discrete
 # Compatible with any ADCIRC output file that contains bathmetry/topography and water surface elevation 
 
 #### import the simple module from the paraview
@@ -12,9 +12,5 @@ if (FindSource('maxele.63.nc.xmf')) is not None:
 else:
 	zetaLUT = GetColorTransferFunction('zeta')
 
-# get color transfer function/color map for 'BathymetricDepth'
-bathymetricDepthLUT = GetColorTransferFunction('BathymetricDepth')
-
-# Discretize color maps by reducing the number of table values
+# Discretize color map by reducing the number of table values
 zetaLUT.NumberOfTableValues = 30
-bathymetricDepthLUT.NumberOfTableValues = 30
