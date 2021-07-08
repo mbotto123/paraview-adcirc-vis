@@ -16,48 +16,48 @@ cam = GetActiveCamera()
 viewUp = cam.GetViewUp()
 viewUpScale = 0.05
 
-text1 = Text()
-text1Display = Show(text1, renderView1, 'TextSourceRepresentation')
-text1Display.TextPropMode = 'Flagpole Actor'
-text1.Text = 'Houston'
-text1Display.FontSize = 40
-text1Display.Bold = 1
-text1Display.Shadow = 1
-text1Display.BasePosition = [-95.3698, 29.7604, 0.0]
-text1Display.TopPosition = [-95.3698 + viewUp[0]*viewUpScale, 29.7604 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
+textHouston = Text(registrationName='TextHouston')
+textHoustonDisplay = Show(textHouston, renderView1, 'TextSourceRepresentation')
+textHoustonDisplay.TextPropMode = 'Flagpole Actor'
+textHouston.Text = 'Houston'
+textHoustonDisplay.FontSize = 40
+textHoustonDisplay.Bold = 1
+textHoustonDisplay.Shadow = 1
+textHoustonDisplay.BasePosition = [-95.3698, 29.7604, 0.0]
+textHoustonDisplay.TopPosition = [-95.3698 + viewUp[0]*viewUpScale, 29.7604 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
 renderView1.Update()
 
-text2 = Text()
-text2Display = Show(text2, renderView1, 'TextSourceRepresentation')
-text2Display.TextPropMode = 'Flagpole Actor'
-text2.Text = 'Galveston'
-text2Display.FontSize = 40
-text2Display.Bold = 1
-text2Display.Shadow = 1
-text2Display.BasePosition = [-94.7977, 29.3013, 0.0]
-text2Display.TopPosition = [-94.7977 + viewUp[0]*viewUpScale, 29.3013 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
+textGalveston = Text(registrationName='TextGalveston')
+textGalvestonDisplay = Show(textGalveston, renderView1, 'TextSourceRepresentation')
+textGalvestonDisplay.TextPropMode = 'Flagpole Actor'
+textGalveston.Text = 'Galveston'
+textGalvestonDisplay.FontSize = 40
+textGalvestonDisplay.Bold = 1
+textGalvestonDisplay.Shadow = 1
+textGalvestonDisplay.BasePosition = [-94.7977, 29.3013, 0.0]
+textGalvestonDisplay.TopPosition = [-94.7977 + viewUp[0]*viewUpScale, 29.3013 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
 renderView1.Update()
 
-text3 = Text()
-text3Display = Show(text3, renderView1, 'TextSourceRepresentation')
-text3Display.TextPropMode = 'Flagpole Actor'
-text3.Text = 'Bolivar Peninsula'
-text3Display.FontSize = 40
-text3Display.Bold = 1
-text3Display.Shadow = 1
-text3Display.BasePosition = [-94.5799, 29.4783, 0.0]
-text3Display.TopPosition = [-94.5799 + viewUp[0]*viewUpScale, 29.4783 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
+textBolivarP = Text(registrationName='TextBolivarP')
+textBolivarPDisplay = Show(textBolivarP, renderView1, 'TextSourceRepresentation')
+textBolivarPDisplay.TextPropMode = 'Flagpole Actor'
+textBolivarP.Text = 'Bolivar Peninsula'
+textBolivarPDisplay.FontSize = 40
+textBolivarPDisplay.Bold = 1
+textBolivarPDisplay.Shadow = 1
+textBolivarPDisplay.BasePosition = [-94.5799, 29.4783, 0.0]
+textBolivarPDisplay.TopPosition = [-94.5799 + viewUp[0]*viewUpScale, 29.4783 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
 renderView1.Update()
 
-text4 = Text()
-text4Display = Show(text4, renderView1, 'TextSourceRepresentation')
-text4Display.TextPropMode = 'Flagpole Actor'
-text4.Text = 'Beaumont'
-text4Display.FontSize = 40
-text4Display.Bold = 1
-text4Display.Shadow = 1
-text4Display.BasePosition = [-94.1266, 30.0802, 0.0]
-text4Display.TopPosition = [-94.1266 + viewUp[0]*viewUpScale, 30.0802 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
+textBeaumont = Text(registrationName='TextBeaumont')
+textBeaumontDisplay = Show(textBeaumont, renderView1, 'TextSourceRepresentation')
+textBeaumontDisplay.TextPropMode = 'Flagpole Actor'
+textBeaumont.Text = 'Beaumont'
+textBeaumontDisplay.FontSize = 40
+textBeaumontDisplay.Bold = 1
+textBeaumontDisplay.Shadow = 1
+textBeaumontDisplay.BasePosition = [-94.1266, 30.0802, 0.0]
+textBeaumontDisplay.TopPosition = [-94.1266 + viewUp[0]*viewUpScale, 30.0802 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
 renderView1.Update()
 
 # Create a new 'Light'

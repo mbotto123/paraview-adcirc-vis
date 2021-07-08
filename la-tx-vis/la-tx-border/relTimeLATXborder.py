@@ -29,21 +29,16 @@ Delete(extractTimeSteps1)
 del extractTimeSteps1
 
 # create a new 'Annotate Time Filter' 
-annotateTimeFilter1 = AnnotateTimeFilter(Input=generalSource)
+relTimeAnnotation = AnnotateTimeFilter(registrationName='RelativeTimeAnnotation',Input=generalSource)
 
 # annotate time in hours relative to the initial timestep
-annotateTimeFilter1.Format = 'Time: +%.1f hours'
-annotateTimeFilter1.Scale = 2.777777778e-04
+relTimeAnnotation.Format = 'Time: +%.1f hours'
+relTimeAnnotation.Scale = 2.777777778e-04
 # shift annotated time back by initial time so that it starts at zero 
-annotateTimeFilter1.Shift = -1.0*annotateTimeFilter1.Scale*timeInit
+relTimeAnnotation.Shift = -1.0*relTimeAnnotation.Scale*timeInit
 
 # show data in view
-annotateTimeFilter1Display = Show(annotateTimeFilter1, renderView1, 'TextSourceRepresentation')
+relTimeAnnotationDisplay = Show(relTimeAnnotation, renderView1, 'TextSourceRepresentation')
 
 # font size change (needs to happen after Show() )
-annotateTimeFilter1Display.FontSize = 9
-
-# Properties modified on annotateTimeFilter1Display
-annotateTimeFilter1Display.WindowLocation = 'UpperRightCorner'
-
-
+relTimeAnnotationDisplay.FontSize = 30

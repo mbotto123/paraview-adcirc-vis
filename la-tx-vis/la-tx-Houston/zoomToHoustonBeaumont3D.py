@@ -76,12 +76,12 @@ bathymetricDepthLUTColorBar.ScalarBarThickness = 15
 #### end definition of bathymetry/topography color map properties ####
 
 #### This section defines scalar warp properties to produce an exaggerated 3D effect based on bathymetry/topography values ####
-warpByScalar1 = WarpByScalar(Input=generalSource)
-warpByScalar1.Scalars = ['POINTS', 'BathymetricDepth']
-warpByScalar1.ScaleFactor = -0.001
-warpByScalar1Display = Show(warpByScalar1, renderView1, 'UnstructuredGridRepresentation')
+bathyTopoScalarWarp = WarpByScalar(registrationName='BathyTopoWarp',Input=generalSource)
+bathyTopoScalarWarp.Scalars = ['POINTS', 'BathymetricDepth']
+bathyTopoScalarWarp.ScaleFactor = -0.001
+bathyTopoScalarWarpDisplay = Show(bathyTopoScalarWarp, renderView1, 'UnstructuredGridRepresentation')
 Hide(generalSource, renderView1)
-warpByScalar1Display.SetScalarBarVisibility(renderView1, True)
+bathyTopoScalarWarpDisplay.SetScalarBarVisibility(renderView1, True)
 renderView1.Update()
 bathymetricDepthLUTColorBar.WindowLocation = 'AnyLocation'
 bathymetricDepthLUTColorBar.Position = [0.3596160472851709, 0.9142926335143605]
@@ -89,31 +89,31 @@ bathymetricDepthLUTColorBar.Position = [0.3596160472851709, 0.9142926335143605]
 
 #### This section defines the color mapping properties for water surface elevation ####
 # create a new 'Threshold' to filter out ADCIRC missing values for water surface elevation
-threshold1 = Threshold(Input=generalSource)
+zetaThreshold = Threshold(registrationName='WaterSurfEleThreshold',Input=generalSource)
 if (FindSource('maxele.63.nc.xmf')) is not None:
-	threshold1.Scalars = ['POINTS', 'zeta_max']
+	zetaThreshold.Scalars = ['POINTS', 'zeta_max']
 else:
-	threshold1.Scalars = ['POINTS', 'zeta']
+	zetaThreshold.Scalars = ['POINTS', 'zeta']
 	
-threshold1.ThresholdRange = [-9999.0, 7982.183]
+zetaThreshold.ThresholdRange = [-9999.0, 7982.183]
 
 # show data in view
-threshold1Display = Show(threshold1, renderView1, 'UnstructuredGridRepresentation')
+zetaThresholdDisplay = Show(zetaThreshold, renderView1, 'UnstructuredGridRepresentation')
 
 # set scalar coloring
-ColorBy(threshold1Display, ('POINTS', threshold1.Scalars[1]))
+ColorBy(zetaThresholdDisplay, ('POINTS', zetaThreshold.Scalars[1]))
 
 # rescale color and/or opacity maps used to include current data range
-threshold1Display.RescaleTransferFunctionToDataRange(True, False)
+zetaThresholdDisplay.RescaleTransferFunctionToDataRange(True, False)
 
 # show color bar/color legend
-threshold1Display.SetScalarBarVisibility(renderView1, True)
+zetaThresholdDisplay.SetScalarBarVisibility(renderView1, True)
 
 # get color transfer function/color map for 'zeta' or 'zeta_max'
-zetaLUT = GetColorTransferFunction(threshold1.Scalars[1])
+zetaLUT = GetColorTransferFunction(zetaThreshold.Scalars[1])
 
 # get opacity transfer function/opacity map for 'zeta' or 'zeta_max'
-zetaPWF = GetOpacityTransferFunction(threshold1.Scalars[1])
+zetaPWF = GetOpacityTransferFunction(zetaThreshold.Scalars[1])
 
 # Apply a preset using its name. Note this may not work as expected when presets have duplicate names.
 zetaLUT.ApplyPreset('RdYlBu_Brewer', True)
@@ -141,27 +141,27 @@ zetaLUTColorBar.ScalarBarThickness = 15
 #### end definition of water surface elevation color map properties ####
 
 #### This section defines scalar warp properties to produce an exaggerated 3D effect based on water surface elevation values ####
-warpByScalar2 = WarpByScalar(Input=threshold1)
-warpByScalar2.Scalars = ['POINTS', threshold1.Scalars[1]]
-warpByScalar2.ScaleFactor = 0.001
-warpByScalar2Display = Show(warpByScalar2, renderView1, 'UnstructuredGridRepresentation')
-Hide(threshold1, renderView1)
-warpByScalar2Display.SetScalarBarVisibility(renderView1, True)
-#ColorBy(warpByScalar2Display, ('POINTS', threshold1.Scalars[1]))
+zetaScalarWarp = WarpByScalar(registrationName='WaterSurfEleWarp',Input=zetaThreshold)
+zetaScalarWarp.Scalars = ['POINTS', zetaThreshold.Scalars[1]]
+zetaScalarWarp.ScaleFactor = 0.001
+zetaScalarWarpDisplay = Show(zetaScalarWarp, renderView1, 'UnstructuredGridRepresentation')
+Hide(zetaThreshold, renderView1)
+zetaScalarWarpDisplay.SetScalarBarVisibility(renderView1, True)
+#ColorBy(zetaScalarWarpDisplay, ('POINTS', zetaThreshold.Scalars[1]))
 renderView1.Update()
 zetaLUTColorBar.WindowLocation = 'AnyLocation'
 zetaLUTColorBar.Position = [0.5791451099571648, 0.9142926335143605] 
 
 # get display properties
-warpByScalar2Display = GetDisplayProperties(warpByScalar2, view=renderView1)
+zetaScalarWarpDisplay = GetDisplayProperties(zetaScalarWarp, view=renderView1)
 # set scalar coloring
-ColorBy(warpByScalar2Display, ('POINTS', threshold1.Scalars[1]))
+ColorBy(zetaScalarWarpDisplay, ('POINTS', zetaThreshold.Scalars[1]))
 # Hide the scalar bar for this color map if no visible data is colored by it.
 HideScalarBarIfNotNeeded(bathymetricDepthLUT, renderView1)
 # rescale color and/or opacity maps used to include current data range
-warpByScalar2Display.RescaleTransferFunctionToDataRange(True, False)
+zetaScalarWarpDisplay.RescaleTransferFunctionToDataRange(True, False)
 # show color bar/color legend
-warpByScalar2Display.SetScalarBarVisibility(renderView1, True)
+zetaScalarWarpDisplay.SetScalarBarVisibility(renderView1, True)
 # change scalar bar placement
 zetaLUTColorBar.WindowLocation = 'AnyLocation'
 zetaLUTColorBar.Position = [0.5791451099571648, 0.9142926335143605] 
@@ -171,8 +171,8 @@ zetaLUT.RescaleTransferFunction(0.0, 5.0)
 zetaPWF.RescaleTransferFunction(0.0, 5.0)
 
 # Opacity/lighting properties
-warpByScalar2Display.Opacity = 0.95
-warpByScalar2Display.Diffuse = 0.9
+zetaScalarWarpDisplay.Opacity = 0.95
+zetaScalarWarpDisplay.Diffuse = 0.9
 #### end definition of water surface elevation scalar warp properties ####
 
 # Hide orientation axes

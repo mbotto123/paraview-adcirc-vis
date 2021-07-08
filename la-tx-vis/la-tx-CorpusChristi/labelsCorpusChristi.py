@@ -16,37 +16,37 @@ cam = GetActiveCamera()
 viewUp = cam.GetViewUp()
 viewUpScale = 0.075
 
-text1 = Text()
-text1Display = Show(text1, renderView1, 'TextSourceRepresentation')
-text1Display.TextPropMode = 'Flagpole Actor'
-text1.Text = 'Corpus Christi'
-text1Display.FontSize = 45
-text1Display.Bold = 1
-text1Display.Shadow = 1
-text1Display.BasePosition = [-97.3964, 27.8006, 0.0]
-text1Display.TopPosition = [-97.3964 + viewUp[0]*viewUpScale, 27.8006 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
+textCorpusChristi = Text(registrationName='TextCorpusChristi')
+textCorpusChristiDisplay = Show(textCorpusChristi, renderView1, 'TextSourceRepresentation')
+textCorpusChristiDisplay.TextPropMode = 'Flagpole Actor'
+textCorpusChristi.Text = 'Corpus Christi'
+textCorpusChristiDisplay.FontSize = 45
+textCorpusChristiDisplay.Bold = 1
+textCorpusChristiDisplay.Shadow = 1
+textCorpusChristiDisplay.BasePosition = [-97.3964, 27.8006, 0.0]
+textCorpusChristiDisplay.TopPosition = [-97.3964 + viewUp[0]*viewUpScale, 27.8006 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
 renderView1.Update()
 
-text2 = Text()
-text2Display = Show(text2, renderView1, 'TextSourceRepresentation')
-text2Display.TextPropMode = 'Flagpole Actor'
-text2.Text = 'Port Aransas'
-text2Display.FontSize = 45
-text2Display.Bold = 1
-text2Display.Shadow = 1
-text2Display.BasePosition = [-97.0611, 27.8339, 0.0]
-text2Display.TopPosition = [-97.0611 + viewUp[0]*viewUpScale, 27.8339 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
+textPtAransas = Text(registrationName='TextPtAransas')
+textPtAransasDisplay = Show(textPtAransas, renderView1, 'TextSourceRepresentation')
+textPtAransasDisplay.TextPropMode = 'Flagpole Actor'
+textPtAransas.Text = 'Port Aransas'
+textPtAransasDisplay.FontSize = 45
+textPtAransasDisplay.Bold = 1
+textPtAransasDisplay.Shadow = 1
+textPtAransasDisplay.BasePosition = [-97.0611, 27.8339, 0.0]
+textPtAransasDisplay.TopPosition = [-97.0611 + viewUp[0]*viewUpScale, 27.8339 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
 renderView1.Update()
 
-text3 = Text()
-text3Display = Show(text3, renderView1, 'TextSourceRepresentation')
-text3Display.TextPropMode = 'Flagpole Actor'
-text3.Text = 'Rockport'
-text3Display.FontSize = 45
-text3Display.Bold = 1
-text3Display.Shadow = 1
-text3Display.BasePosition = [-97.0544, 28.0206, 0.0]
-text3Display.TopPosition = [-97.0544 + viewUp[0]*viewUpScale, 28.0206 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
+textRockport = Text(registrationName='TextRockport')
+textRockportDisplay = Show(textRockport, renderView1, 'TextSourceRepresentation')
+textRockportDisplay.TextPropMode = 'Flagpole Actor'
+textRockport.Text = 'Rockport'
+textRockportDisplay.FontSize = 45
+textRockportDisplay.Bold = 1
+textRockportDisplay.Shadow = 1
+textRockportDisplay.BasePosition = [-97.0544, 28.0206, 0.0]
+textRockportDisplay.TopPosition = [-97.0544 + viewUp[0]*viewUpScale, 28.0206 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
 renderView1.Update()
 
 # Create a new 'Light'

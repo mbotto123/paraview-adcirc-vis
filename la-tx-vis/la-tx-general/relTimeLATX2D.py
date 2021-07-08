@@ -28,7 +28,7 @@ Delete(extractTimeSteps1)
 del extractTimeSteps1
 
 # create a new 'Annotate Time Filter' 
-relTimeAnnotation = AnnotateTimeFilter(registrationName='relativeTimeAnnotation',Input=generalSource)
+relTimeAnnotation = AnnotateTimeFilter(registrationName='RelativeTimeAnnotation',Input=generalSource)
 
 # annotate time in hours relative to the initial timestep
 relTimeAnnotation.Format = 'Time: +%.1f hours'
