@@ -1,6 +1,6 @@
 # Script to zoom in to an ADCIRC domain, focusing on a general 2D view of the LA-TX coast
 # Designed for meshes which show land along the TX and LA coasts but don't go far inland on LA coast 
-# Prerequisites: blueBrownGreenBathyTopo color map must be loaded into ParaView
+# Prerequisites: blueBrownGreenBathyTopo and RdYlBu_Brewer color maps must be loaded into ParaView
 
 # This script can handle a ParaView visualization made from following ADCIRC output files: 
 # maxele.63.nc, fort.63.nc, or combined fort.63.nc and fort.74.nc
