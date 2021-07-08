@@ -40,6 +40,6 @@ annotateTimeFilter1.Shift = -1.0*annotateTimeFilter1.Scale*timeInit
 annotateTimeFilter1Display = Show(annotateTimeFilter1, renderView1, 'TextSourceRepresentation')
 
 # font size change (needs to happen after Show() )
-annotateTimeFilter1Display.FontSize = 9
+annotateTimeFilter1Display.FontSize = 30
 
 
