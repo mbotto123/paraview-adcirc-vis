@@ -1,6 +1,6 @@
 # Script to zoom in to an ADCIRC domain, focusing on a 3D view of the LA-TX border
 # including Port Arthur, TX; Beaumont, TX; Lake Charles, LA; Cameron, LA; Hackberry, LA
-# Prerequisites: blueBrownGreenBathyTopo color map must be loaded into ParaView
+# Prerequisites: blueBrownGreenBathyTopo and RdYlBu_Brewer color maps must be loaded into ParaView
 
 # This script can handle a ParaView visualization made from following ADCIRC output files: 
 # maxele.63.nc, fort.63.nc, or combined fort.63.nc and fort.74.nc
@@ -111,16 +111,12 @@ zetaThresholdDisplay.SetScalarBarVisibility(renderView1, True)
 
 # get color transfer function/color map for 'zeta' or 'zeta_max'
 zetaLUT = GetColorTransferFunction(zetaThreshold.Scalars[1])
-zetaLUT.RGBPoints = [-2.651, 0.231373, 0.298039, 0.752941, 0.8777015514658117, 0.865003, 0.865003, 0.865003, 4.406403102931623, 0.705882, 0.0156863, 0.14902]
-zetaLUT.ScalarRangeInitialized = 1.0
 
 # get opacity transfer function/opacity map for 'zeta' or 'zeta_max'
 zetaPWF = GetOpacityTransferFunction(zetaThreshold.Scalars[1])
-zetaPWF.Points = [-2.651, 0.0, 0.5, 0.0, 4.406403102931623, 1.0, 0.5, 0.0]
-zetaPWF.ScalarRangeInitialized = 1
 
 # Apply a preset using its name. Note this may not work as expected when presets have duplicate names.
-zetaLUT.ApplyPreset('erdc_rainbow_dark', True)
+zetaLUT.ApplyPreset('RdYlBu_Brewer', True)
 
 # Rescale transfer function
 zetaLUT.RescaleTransferFunction(0.0, 5.0)
@@ -129,9 +125,6 @@ zetaLUT.RescaleTransferFunction(0.0, 5.0)
 zetaPWF.RescaleTransferFunction(0.0, 5.0)
 
 zetaLUT.AutomaticRescaleRangeMode = 'Never'
-
-# Properties modified on zetaThresholdDisplay
-zetaThresholdDisplay.Opacity = 0.9
 
 # get color legend/bar for zetaLUT in view renderView1
 zetaLUTColorBar = GetScalarBar(zetaLUT, renderView1)
@@ -175,6 +168,10 @@ zetaLUTColorBar.Position = [0.07702984038861965, 0.7101986754966899]
 zetaLUT.RescaleTransferFunction(0.0, 5.0)
 # Rescale transfer function
 zetaPWF.RescaleTransferFunction(0.0, 5.0)
+
+# Opacity/lighting properties
+zetaScalarWarpDisplay.Opacity = 0.95
+zetaScalarWarpDisplay.Diffuse = 0.9
 #### end definition of water surface elevation scalar warp properties ####
 
 # Hide orientation axes

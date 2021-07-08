@@ -1,5 +1,5 @@
 # Script to zoom in to an ADCIRC domain, focusing on a 3D view that includes areas around Corpus Christi and Port Aransas
-# Prerequisites: blueBrownGreenBathyTopo color map must be loaded into ParaView
+# Prerequisites: blueBrownGreenBathyTopo and RdYlBu_Brewer color maps must be loaded into ParaView
 
 # This script can handle a ParaView visualization made from following ADCIRC output files: 
 # maxele.63.nc, fort.63.nc, or combined fort.63.nc and fort.74.nc
@@ -28,9 +28,9 @@ renderView1.ResetCamera()
 
 # set the camera position
 camera = GetActiveCamera()
-camera.SetFocalPoint(-99.91022714224763, 31.987977291053575, -3.649896696534095)
-camera.SetPosition(-96.69604382335393, 27.125110230801493, 0.7001809356802895)
-camera.SetViewUp(-0.32765114160459463, 0.500353790937107, 0.8014304793929864)
+camera.SetFocalPoint(-100.33506297064358, 31.513082242585284, -3.2578409992309085)
+camera.SetPosition(-96.32009449854075, 27.020311056742564, 0.8160589871595665)
+camera.SetViewUp(-0.37042073412163967, 0.4201488497417963, 0.828410178470443)
 Render()
 
 # find source
@@ -65,12 +65,12 @@ bathymetricDepthLUT.AutomaticRescaleRangeMode = 'Never'
 bathymetricDepthLUTColorBar = GetScalarBar(bathymetricDepthLUT, renderView1)
 bathymetricDepthLUTColorBar.ComponentTitle = ''
 bathymetricDepthLUTColorBar.AutoOrient = 0
-bathymetricDepthLUTColorBar.Orientation = 'Vertical'
+bathymetricDepthLUTColorBar.Orientation = 'Horizontal'
 bathymetricDepthLUTColorBar.WindowLocation = 'AnyLocation'
-bathymetricDepthLUTColorBar.Position = [0.08630117973629364, 0.580132450331126]
+bathymetricDepthLUTColorBar.Position = [0.4461287659431904, 0.8996311649840824]
 bathymetricDepthLUTColorBar.Title = 'Bathymetry/Topography (m)'
 bathymetricDepthLUTColorBar.AddRangeLabels = 0
-bathymetricDepthLUTColorBar.ScalarBarLength = 0.3
+bathymetricDepthLUTColorBar.ScalarBarLength = 0.2
 bathymetricDepthLUTColorBar.ScalarBarThickness = 16
 #### end definition of bathymetry/topography color map properties ####
 
@@ -83,7 +83,7 @@ Hide(generalSource, renderView1)
 bathyTopoScalarWarpDisplay.SetScalarBarVisibility(renderView1, True)
 renderView1.Update()
 bathymetricDepthLUTColorBar.WindowLocation = 'AnyLocation'
-bathymetricDepthLUTColorBar.Position = [0.08630117973629364, 0.580132450331126]
+bathymetricDepthLUTColorBar.Position = [0.4461287659431904, 0.8996311649840824]
 #### end definition of bathymetry/topography scalar warp properties ####
 
 #### This section defines the color mapping properties for water surface elevation ####
@@ -110,16 +110,12 @@ zetaThresholdDisplay.SetScalarBarVisibility(renderView1, True)
 
 # get color transfer function/color map for 'zeta' or 'zeta_max'
 zetaLUT = GetColorTransferFunction(zetaThreshold.Scalars[1])
-zetaLUT.RGBPoints = [-2.651, 0.231373, 0.298039, 0.752941, 0.8777015514658117, 0.865003, 0.865003, 0.865003, 4.406403102931623, 0.705882, 0.0156863, 0.14902]
-zetaLUT.ScalarRangeInitialized = 1.0
 
 # get opacity transfer function/opacity map for 'zeta' or 'zeta_max'
 zetaPWF = GetOpacityTransferFunction(zetaThreshold.Scalars[1])
-zetaPWF.Points = [-2.651, 0.0, 0.5, 0.0, 4.406403102931623, 1.0, 0.5, 0.0]
-zetaPWF.ScalarRangeInitialized = 1
 
 # Apply a preset using its name. Note this may not work as expected when presets have duplicate names.
-zetaLUT.ApplyPreset('erdc_rainbow_dark', True)
+zetaLUT.ApplyPreset('RdYlBu_Brewer', True)
 
 # Rescale transfer function
 zetaLUT.RescaleTransferFunction(0.0, 5.0)
@@ -129,19 +125,16 @@ zetaPWF.RescaleTransferFunction(0.0, 5.0)
 
 zetaLUT.AutomaticRescaleRangeMode = 'Never'
 
-# Properties modified on zetaThresholdDisplay
-zetaThresholdDisplay.Opacity = 0.9
-
 # get color legend/bar for zetaLUT in view renderView1
 zetaLUTColorBar = GetScalarBar(zetaLUT, renderView1)
 zetaLUTColorBar.ComponentTitle = ''
 zetaLUTColorBar.AutoOrient = 0
-zetaLUTColorBar.Orientation = 'Vertical'
+zetaLUTColorBar.Orientation = 'Horizontal'
 zetaLUTColorBar.WindowLocation = 'AnyLocation'
-zetaLUTColorBar.Position = [0.01249132546842496, 0.580132450331126]
+zetaLUTColorBar.Position = [0.7248275862068965, 0.8996311649840824]
 zetaLUTColorBar.Title = 'Water Surface Elevation (m)'
 zetaLUTColorBar.AddRangeLabels = 0
-zetaLUTColorBar.ScalarBarLength = 0.3
+zetaLUTColorBar.ScalarBarLength = 0.2
 zetaLUTColorBar.ScalarBarThickness = 16
 #### end definition of water surface elevation color map properties ####
 
@@ -155,7 +148,7 @@ zetaScalarWarpDisplay.SetScalarBarVisibility(renderView1, True)
 #ColorBy(zetaScalarWarpDisplay, ('POINTS', zetaThreshold.Scalars[1]))
 renderView1.Update()
 zetaLUTColorBar.WindowLocation = 'AnyLocation'
-zetaLUTColorBar.Position = [0.01249132546842496, 0.580132450331126]
+zetaLUTColorBar.Position = [0.7248275862068965, 0.8996311649840824]
 
 # get display properties
 zetaScalarWarpDisplay = GetDisplayProperties(zetaScalarWarp, view=renderView1)
@@ -169,11 +162,15 @@ zetaScalarWarpDisplay.RescaleTransferFunctionToDataRange(True, False)
 zetaScalarWarpDisplay.SetScalarBarVisibility(renderView1, True)
 # change scalar bar placement
 zetaLUTColorBar.WindowLocation = 'AnyLocation'
-zetaLUTColorBar.Position = [0.01249132546842496, 0.580132450331126]
+zetaLUTColorBar.Position = [0.7248275862068965, 0.8996311649840824]
 # Rescale transfer function
 zetaLUT.RescaleTransferFunction(0.0, 5.0)
 # Rescale transfer function
 zetaPWF.RescaleTransferFunction(0.0, 5.0)
+
+# Opacity/lighting properties
+zetaScalarWarpDisplay.Opacity = 0.95
+zetaScalarWarpDisplay.Diffuse = 0.9
 #### end definition of water surface elevation scalar warp properties ####
 
 # Hide orientation axes

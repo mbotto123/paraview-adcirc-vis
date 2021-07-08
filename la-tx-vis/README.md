@@ -9,7 +9,7 @@ More details about these scripts such as which files they are compatible with ca
 ## General utility scripts
 This directory also includes general utility scripts, which can be used with any visualization:
 - The ``changeZetaUpBound`` script provides a fast way to change the upper bound for the water surface elevation color map by prompting the user for a value through the ParaView GUI. 
-- The `discretizeColorMaps` script modifies the color maps in the visualization so that they appear discrete. You can undo its effects with `unDiscretizeColorMaps`.
+- The `discretizeZetaMap` script modifies the water surface elevation color map in the visualization so that it appears discrete. You can undo its effects with `unDiscretizeZetaMap`.
 
 **It is recommended to run these utility scripts as macros.** If you run them from ParaView's Python shell, their effects will not be visible until after you close the shell.
 

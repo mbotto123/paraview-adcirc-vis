@@ -35,7 +35,9 @@ textPtAransasDisplay.FontSize = 45
 textPtAransasDisplay.Bold = 1
 textPtAransasDisplay.Shadow = 1
 textPtAransasDisplay.BasePosition = [-97.0611, 27.8339, 0.0]
-textPtAransasDisplay.TopPosition = [-97.0611 + viewUp[0]*viewUpScale, 27.8339 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
+#textPtAransasDisplay.TopPosition = [-97.0611 + viewUp[0]*viewUpScale, 27.8339 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
+# Hardcoded version for temporary fix on unknown 5.9 background color issue - generalize again when issue is resolved
+textPtAransasDisplay.TopPosition = [-97.0611 + viewUp[0]*viewUpScale, 27.8339 + viewUp[1]*viewUpScale, 0.0528]
 renderView1.Update()
 
 textRockport = Text(registrationName='TextRockport')
@@ -46,7 +48,9 @@ textRockportDisplay.FontSize = 45
 textRockportDisplay.Bold = 1
 textRockportDisplay.Shadow = 1
 textRockportDisplay.BasePosition = [-97.0544, 28.0206, 0.0]
-textRockportDisplay.TopPosition = [-97.0544 + viewUp[0]*viewUpScale, 28.0206 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
+#textRockportDisplay.TopPosition = [-97.0544 + viewUp[0]*viewUpScale, 28.0206 + viewUp[1]*viewUpScale, viewUp[2]*viewUpScale]
+# Hardcoded version for temporary fix on unknown 5.9 background color issue - generalize again when issue is resolved
+textRockportDisplay.TopPosition = [-97.0544 + viewUp[0]*viewUpScale, 28.0206 + viewUp[1]*viewUpScale, 0.1]
 renderView1.Update()
 
 # Create a new 'Light'
