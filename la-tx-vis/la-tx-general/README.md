@@ -21,6 +21,6 @@ Sample image of all scripts (except `relTimeLATX2D`) used together for the 'ML' 
 
 ![](./general-ML-sample.png)
 
-Sample image of all scripts used together for the 'LL' versions (visualization of Hurricane Ike; also uses the `discretizeColorMaps` utility):
+Sample image of all scripts used together for the 'LL' versions (visualization of Hurricane Ike; also uses the `discretizeZetaMap` utility):
 
 ![](./general-LL-sample.png)
