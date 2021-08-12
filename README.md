@@ -2,11 +2,12 @@
 Python code to help with visualization of ADCIRC results using ParaView. This code automates actions such as zooming in to a specific area of interest, setting location labels, and adding wind vectors to a 2D visualization.
 
 ## Summary of contents
-- Directories with names ending in ``-vis``: Contain Python scripts for different regions of interest in the US (as of June 2021, there is only one directory for regions on the Louisiana-Texas coast)
+- Directories with names ending in ``-vis``: Contain Python scripts for different regions of interest in the US (as of August 2021, there is only one directory for regions on the Louisiana-Texas coast)
 - ``color-maps``: Custom color maps that need to be loaded into ParaView. You only need to import these color maps once; afterwards, ParaView 
 should automatically remember them.
 - ``examples``: Example cases with instructions that can be used to reproduce a sample image.
-- ``utilities``: General utilities for working with ADCIRC netCDF files.
+- ``utilities``: Shell utilities for working with ADCIRC netCDF files.
+- ``documentation``: Supporting documentation for getting started with the repository
 - This Readme file contains general instructions to load ADCIRC netCDF output files into ParaView. Each ``-vis`` directory has Readme files with more specific instructions about the 
 Python scripts.
 
